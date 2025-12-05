@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>계약서</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+    }
+
+    /* 👇 투명 버튼 (오른쪽 아래) */
+    .hidden-btn {
+      position: absolute;
+      width: 24px;   /* 버튼 영역 크기 */
+      height: 10px;  /* 버튼 영역 크기 */
+      background: rgba(255, 0, 0, 0); /* 완전 투명 */
+      cursor: pointer;
+    }
+
+    /* 개발 중에는 버튼 위치 보려면 이걸 켜면 됨 */
+    .hidden-btn { background: rgba(255,0,0,0.3); }
+
+    /* 버튼 1 (오른쪽 아래) */
+    #btn1 {
+      bottom: 85px;
+      right: 60px;
+    }
+
+    /* 버튼 2 (가운데 아래) */
+    #btn2 {
+      bottom: 100px;
+      right: 60px;
+    }
+
+    /* 버튼 3 (왼쪽 아래) */
+    #btn3 {
+      bottom: 115px;
+      right: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="img/문서.png" alt="그림">
+    <div id="btn1" class="hidden-btn" onclick="location.href='next_유진.html'"></div>
+    <div id="btn2" class="hidden-btn" onclick="location.href='next_도일.html'"></div>
+    <div id="btn3" class="hidden-btn" onclick="location.href='next_승민.html'"></div>
+  </div>
+
+</body>
+</html>

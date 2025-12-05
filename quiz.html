@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>크리스마스 선물</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .question-box { margin-bottom: 24px; }
+    .option { margin: 6px 0; display:block; }
+    button { padding: 10px 16px; font-size: 16px; cursor: pointer; }
+    #result, #result2 { margin-top: 20px; font-weight: bold; font-size: 18px; }
+    .hr { border-top:1px solid #e6e6e6; margin:20px 0; }
+  </style>
+</head>
+<body>
+  <h2>크리스마스 선물을 얻기 위해서는 다음 문제들을 해결해야 하는데...</h2>
+  <h2> </h2>
+
+  <!-- ✅ 문제 1 (유진이문제) -->
+  <div class="question-box" id="Q1">
+    <p><strong>문제 1.</strong></p>
+    <p>다음 책들의 표지를 보고 제목, 저자, 출판사를 맞추시오. (힌트: 두글자).</p>
+    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin:10px 0;">
+  	<img src="img/이중하나는거짓말.png" style="width:100%; height:auto;" />
+  	<img src="img/여름을한입.png" style="width:100%; height:auto;" />
+  	<img src="img/이처럼사소한.png" style="width:100%; height:auto;" />
+  	<img src="img/노르웨이로도망쳐.png" style="width:100%; height:auto;" />
+  	<img src="img/네버라이.png" style="width:100%; height:auto;" />
+    <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="img/이중하나는거짓말-표.png" style="width:80%; height:auto;" />
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="img/여름을한입-표.png" style="width:80%; height:auto;" />
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="img/이처럼사소한-표.png" style="width:80%; height:auto;" />
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="img/노르웨이로도망쳐-표.png" style="width:80%; height:auto;" />
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="img/네버라이-표.png" style="width:80%; height:auto;" />
+      </div>
+    </div>
+    <input type="text" id="q1" placeholder="정답을 입력하세요" style="width:100%; max-width:420px; padding:8px; font-size:16px;" />
+  </div>
+
+  <!-- ✅ 문제 2 (승민이문제) -->
+  <div class="question-box" id="Q2">
+    <p><strong>문제 2.</strong></p>
+    <p>주어진 장소의 순서에 맞는 것을 고르시오.</p>
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin:10px 0;">
+      <img src="img/스키장-휘닉스파크.jpg" style="width:100%; height:auto;" />
+      <img src="img/스키장-윌리힐리파크.jpg" style="width:100%; height:auto;" />
+      <img src="img/스키장-비발디파크.jpg" style="width:100%; height:auto;" />
+      <img src="img/스키장-하이원.jpg" style="width:100%; height:auto;" />
+</div>
+    <label class="option"><input type="radio" name="q2" value="A"> 비발디파크 - 윌리힐리파크 - 하이원 - 휘닉스파크</label>
+    <label class="option"><input type="radio" name="q2" value="B" > 휘닉스파크 - 윌리힐리파크 - 비발디파크 - 하이원</label>
+    <label class="option"><input type="radio" name="q2" value="C" > 윌리힐리파크 - 휘닉스파크 - 비발디파크 - 하이원</label>
+    <label class="option"><input type="radio" name="q2" value="D" > 윌리힐리파크 - 휘닉스파크 - 하이원 - 비발디파크</label>
+  </div>
+
+  <!-- ✅ 문제 3 (도일이문제) -->
+  <div class="question-box" id="Q3">
+    <p><strong>문제 3.</strong></p>
+    <p>다음 중 개구리에 관한 설명으로 옳지 않은 것은?</p>
+    <label class="option"><input type="radio" name="q3" value="A"> 개구리의 혀는 빠르게 튀어나가 먹이를 잡는다.</label>
+    <label class="option"><input type="radio" name="q3" value="B" > 개구리는 눈을 감으면서 음식을 삼킨다.</label>
+    <label class="option"><input type="radio" name="q3" value="C" > 개구리는 울음주머니가 있다.</label>
+    <label class="option"><input type="radio" name="q3" value="D" > 개구리는 귓바퀴가 있다.</label>
+  </div>
+
+
+  <button id="submitBtn">제출하기</button>
+  <div id="result"></div>
+
+  <div class="hr"></div>
+
+  <!-- 🔒 기타문제: 1~3 모두 정답일 때만 표시 -->
+  <div id="extraSection" style="display:none;">
+    <h3>자 그럼 이제 두 번째 파트!!</h3>
+    <!-- ✅ 문제 4 (그림문제 - 개구리) -->
+    <div class="question-box" id="Q4">
+      <p><strong>문제 4.</strong></p>
+      <img src="img/q4_개구리문제.png" style="width:100%; height:auto;" />
+      <input type="text" id="q4" placeholder="정답을 입력하세요" style="width:100%; max-width:420px; padding:8px; font-size:16px;" />
+    </div>
+    <!-- ✅ 문제 5 (eeeee) -->
+    <div class="question-box" id="Q5">
+      <p><strong>문제 5.</strong></p>
+      <p>(힌트: 5글자)</p>
+      <img src="img/q5_세븐일레븐.png" style="width:100%; height:auto;" />
+      <input type="text" id="q5" placeholder="정답을 입력하세요" style="width:100%; max-width:420px; padding:8px; font-size:16px;" />
+    </div>
+    <!-- ✅ 문제 6 (요일문제) -->
+    <div class="question-box" id="Q6">
+      <p><strong>문제 6.</strong></p>
+      <p>오늘은 무슨 요일일까요?</p>
+      <img src="img/q6_요일문제.png" style="width:100%; height:auto;" />
+      <label class="option"><input type="radio" name="q6" value="A"> 목요일</label>
+      <label class="option"><input type="radio" name="q6" value="B" > 토요일</label>
+      <label class="option"><input type="radio" name="q6" value="C" > 일요일</label>
+      <label class="option"><input type="radio" name="q6" value="D" > 월요일</label>
+    </div>
+    <button id="submitBtn2">제출하기</button>
+    <div id="result2"></div>
+
+    <div class="hr"></div>
+
+
+    <!-- 🔒 수영이문제 : 1~6 모두 정답일 때만 표시 -->
+    <div id="extraSection2" style="display:none;">
+      <h3>진짜진짜 마지막 세 번째 파트!!!</h3>
+      <!-- ✅ 문제 7 (블로그문제) -->
+      <div class="question-box" id="Q7">
+        <p><strong>문제 7.</strong></p>
+        <p>♪♪</p>
+        <div style="display:flex; flex-direction:column; gap:14px; margin:16px 0;">
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+   	    <img src="img/블로그_강.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />	
+            <img src="img/블로그_남.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+            <img src="img/블로그_역.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+          </div>
+	  <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;">
+	    <img src="img/블로그_9.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	    <img src="img/블로그_번.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	    <img src="img/블로그_출.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	    <img src="img/블로그_구.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	  </div>
+	  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+	    <img src="img/블로그_앞.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	    <img src="img/블로그_에.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	    <img src="img/블로그_서.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;" />
+	  </div>
+	</div>
+        <input type="text" id="q7" placeholder="정답을 입력하세요" style="width:100%; max-width:420px; padding:8px; font-size:16px;" />
+      </div>
+      <!-- ✅ 문제 8 (순위매기기) -->
+      <div class="question-box" id="Q8">
+        <p><strong>문제 8.</strong></p>
+        <p>수영이에게 갑자기 생긴 1달간의 휴가. 오랜만의 휴가에 여행 계획을 세워보려 하는데... 다음 보기 중 수영이가 선호하는 순서대로 나열하여라.</p>
+        <img src="img/q8_순서문제.png" style="width:100%; height:auto;" />
+        <label class="option"><input type="radio" name="q8" value="A"> D-B-C-A</label>
+        <label class="option"><input type="radio" name="q8" value="B" > B-D-A-C</label>
+        <label class="option"><input type="radio" name="q8" value="C" > A-D-B-C</label>
+        <label class="option"><input type="radio" name="q8" value="D" > C-B-D-A</label>
+      </div>
+      <!-- ✅ 문제 9 (노래문제) -->
+      <div class="question-box" id="Q9">
+        <p><strong>문제 9.</strong></p>
+        <p>수영이가 노래방에서 자주 부르는 곡이 아닌 것은?</p>
+        <label class="option"><input type="radio" name="q9" value="A" > 애상</label>
+        <label class="option"><input type="radio" name="q9" value="B" > 렛잇고</label>
+        <label class="option"><input type="radio" name="q9" value="C" > 죽일놈</label>
+        <label class="option"><input type="radio" name="q9" value="D" > 너였다면</label>
+      </div>
+      <button id="submitBtn3">제출하기</button>
+      <div id="result3"></div>
+
+  </div>
+
+  <script>
+    // ===== 채점 스키마 =====
+    // type: 'single' | 'multi' | 'text'
+    const schema = {
+      // 1~3단계
+      q1: { type: 'text', answers: ['행운'] },
+      q2: { type: 'single', answer: 'B' },
+      q3: { type: 'single',  answer: 'D' },
+      // 4~6단계
+      q4: { type: 'text', answers: ['개구리'] },
+      q5: { type: 'text', answers: ['세븐일레븐'] },
+      q6: { type: 'single',  answer: 'C' },
+      // 7~9단계
+      q7: { type: 'text', answers: ['강남역 9번출구 앞에서'] },
+      q8: { type: 'single', answer: 'A' },
+      q9: { type: 'single',  answer: 'C' },
+    };
+
+    const normalize = (s) => (s || '').toString().toLowerCase().replace(/\s+/g, '');
+
+    function checkSingle(name, answer){
+      const sel = document.querySelector('input[name="'+name+'"]:checked');
+      return !!sel && sel.value === answer;
+    }
+    function checkMulti(name, answers){
+      const sel = Array.from(document.querySelectorAll('input[name="'+name+'"]:checked')).map(e=>e.value);
+      const sSel = sel.slice().sort().join(',');
+      const sAns = (answers||[]).slice().sort().join(',');
+      return sel.length === (answers||[]).length && sSel === sAns;
+    }
+    function checkText(id, answers){
+      const val = document.getElementById(id).value;
+      const norm = normalize(val);
+      const pool = (answers||[]).map(normalize);
+      return pool.includes(norm);
+    }
+
+    // ===== 1,2,3 채점 =====
+    document.getElementById('submitBtn').addEventListener('click', function(){
+      const resultBox = document.getElementById('result');
+      let allCorrect = true;
+      let wrong = [];
+
+      if(!checkText('q1', schema.q1.answers)) { allCorrect=false; wrong.push('문제 1'); }
+      if(!checkSingle('q2', schema.q2.answer)) { allCorrect=false; wrong.push('문제 2'); }
+      if(!checkSingle('q3', schema.q3.answer)) { allCorrect=false; wrong.push('문제 3'); }
+
+      if(allCorrect){
+        resultBox.textContent = '✅';
+        resultBox.style.color = 'green';
+        const extra = document.getElementById('extraSection');
+        if(extra){ extra.style.display = 'block'; window.scrollTo({ top: extra.offsetTop - 8, behavior: 'smooth' }); }
+      } else {
+        resultBox.textContent = '❌ 다시 생각해 보세요. ';
+        resultBox.style.color = 'red';
+      }
+    });
+
+    // ===== 4,5,6 채점 (결과는 아래 result2에 표시) =====
+    document.getElementById('submitBtn2').addEventListener('click', function(){
+      const resultBox2 = document.getElementById('result2');
+      let allCorrect = true;
+      let wrong = [];
+
+      if(!checkText('q4', schema.q4.answers)) { allCorrect=false; wrong.push('문제 4'); }
+      if(!checkText('q5', schema.q5.answers)) { allCorrect=false; wrong.push('문제 5'); }
+      if(!checkSingle('q6', schema.q6.answer)) { allCorrect=false; wrong.push('문제 6'); }
+
+      if(allCorrect){
+        resultBox2.textContent = '✅';
+        resultBox2.style.color = 'green';
+        const extra = document.getElementById('extraSection2');
+        if(extra){ extra.style.display = 'block'; window.scrollTo({ top: extra.offsetTop - 8, behavior: 'smooth' }); }
+      } else {
+        resultBox2.textContent = '❌ 다시 생각해 보세요.';
+        resultBox2.style.color = 'red';
+      }
+    });
+
+    // ===== 7,8,9 채점 (결과는 아래 result2에 표시) =====
+    document.getElementById('submitBtn3').addEventListener('click', function(){
+      const resultBox3 = document.getElementById('result3');
+      let allCorrect = true;
+      let wrong = [];
+
+      if(!checkText('q7', schema.q7.answers)) { allCorrect=false; wrong.push('문제 7'); }
+      if(!checkSingle('q8', schema.q8.answer)) { allCorrect=false; wrong.push('문제 8'); }
+      if(!checkSingle('q9', schema.q9.answer)) { allCorrect=false; wrong.push('문제 9'); }
+
+      if(allCorrect){
+        resultBox3.textContent = '✅';
+        resultBox3.style.color = 'green';
+  	setTimeout(function(){
+    	    window.location.href = "next1.html";
+  	}, 800);
+      } else {
+        resultBox3.textContent = '❌ 다시 생각해 보세요.';
+        resultBox3.style.color = 'red';
+      }
+    });
+
+  </script>
+</body>
+</html>
